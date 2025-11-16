@@ -1,0 +1,210 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --text-dark: #333;
+  --bg-light: #f4f4f4;
+  --white: #fff;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 70px;
+}
+
+/* === Navbar === */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: var(--white);
+  font-weight: 600;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+/* === Login Form === */
+.login-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column; /* Ditambahkan agar alert berada di atas container */
+  justify-content: center;
+  align-items: center; /* MEMASTIKAN SEMUA ELEMEN DI TENGAH HORIZONTAL */
+  padding: 40px 20px;
+}
+
+/* GAYA ALERT UNTUK PESAN KESALAHAN */
+.error-alert {
+  background-color: #e74c3c; /* Merah menyala */
+  color: var(--white);
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 1.1em; /* Lebih besar */
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); /* Bayangan merah */
+  max-width: 400px;
+  width: 90%;
+  border: 2px solid #c0392b;
+  animation: shake 0.5s; /* Efek guncangan */
+  align-self: center; /* Memastikan alert berada di tengah kontainer flex */
+}
+
+.error-alert i {
+    margin-right: 10px;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+/* AKHIR GAYA ALERT */
+
+.container {
+  width: 350px;
+  max-width: 90%;
+  padding: 40px 30px;
+  background-color: var(--white);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  background-color: var(--bg-light);
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.register-text {
+  margin-top: 15px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.register-text a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+/* === Footer === */
+.website-footer-wrapper {
+  margin-top: auto;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--bg-light);
+}
+
+.footer-line {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 90%;
+  margin: 20px auto 10px auto;
+}
+
+.website-footer {
+  text-align: center;
+  padding: 10px 0 20px 0;
+  font-size: 0.85em;
+  color: var(--bg-light);
+}
+
+.website-footer strong {
+  font-weight: 600;
+  color: var(--secondary-color);
+}

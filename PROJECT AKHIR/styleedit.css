@@ -1,0 +1,225 @@
+:root {
+  --primary-color: #2c3e50; /* Biru Tua/Navy, digunakan untuk Navbar dan Judul */
+  --secondary-color: #3498db; /* Biru Cerah, digunakan untuk Tombol dan Aksen */
+  --text-dark: #333;
+  --bg-light: #f4f4f4;
+  --white: #fff;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* === Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* === Navbar (Konsisten dengan File Lain) === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: var(--white);
+  font-weight: 600;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+/* --- Content Layout --- */
+.main-wrapper {
+  flex-grow: 1;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+}
+
+/* === Container Form === */
+.input-form-container {
+  max-width: 900px;
+  width: 100%;
+  padding: 40px;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.input-form-container h1 {
+  font-size: 28px;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.input-form-container p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #ddd;
+  margin-bottom: 30px;
+}
+
+/* === Form Grid (2 Kolom) === */
+.wisata-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Membagi form menjadi 2 kolom */
+  gap: 20px 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Input Style === */
+label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: var(--bg-light);
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+}
+
+/* === Tombol Aksi === */
+.form-actions {
+  grid-column: 1 / 3; /* Tombol membentang di kedua kolom */
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn-submit {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-submit i {
+  margin-right: 8px;
+}
+
+.btn-submit:hover {
+  background-color: #2980b9;
+}
+
+/* === Link Kembali === */
+.back-link {
+  grid-column: 1 / 3;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.back-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* === Footer === */
+.website-footer-wrapper {
+  margin-top: auto;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--bg-light);
+}
+
+.footer-line {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 90%;
+  margin: 20px auto 10px auto;
+}
+
+.website-footer {
+  text-align: center;
+  padding: 10px 0 20px 0;
+  font-size: 0.85em;
+  color: var(--bg-light);
+}
+
+.website-footer strong {
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+
+/* === Responsiveness === */
+@media (max-width: 768px) {
+  .input-form-container {
+    padding: 20px;
+  }
+  .wisata-form {
+    grid-template-columns: 1fr; /* Ubah menjadi satu kolom di layar kecil */
+    gap: 15px;
+  }
+  .form-actions {
+    grid-column: 1 / 2;
+  }
+}

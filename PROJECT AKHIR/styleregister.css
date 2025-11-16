@@ -1,0 +1,152 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --text-dark: #333;
+  --bg-light: #f4f4f4;
+  --white: #fff;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* === Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* === Register Wrapper === */
+.register-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* === Form Container === */
+.container {
+  background-color: var(--white);
+  width: 380px;
+  max-width: 90%;
+  padding: 30px 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.container h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.container p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.container hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  background-color: var(--bg-light);
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+/* === Button === */
+button {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 12px 20px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* === Login Text === */
+.login-text {
+  margin-top: 15px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.login-text a {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* === Footer === */
+footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--bg-light);
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.85em;
+}
+
+footer hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 90%;
+  margin: 0 auto 10px auto;
+}
+
+footer strong {
+  color: var(--secondary-color);
+}
